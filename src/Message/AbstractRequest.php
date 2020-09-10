@@ -54,7 +54,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest {
         $data['serviceId'] = $this->getServiceId();
         
         $httpRequest = $this->httpClient->createRequest(
-                $method, $this->endpoint . $endpoint.'/json', array(), $data
+                $method, $this->endpoint . $endpoint.'/json', array(), $data, ['verify' => false]
         );
 
         return $httpRequest->send();
